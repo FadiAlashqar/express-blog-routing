@@ -1,36 +1,36 @@
 // importo express:
-const express = rquire('express');
+const express = require('express');
 
 // importo la classe router:
-const router = express.router();
+const router = express.Router();
 
 // index:
-router.get('/', (res, req) => {
+router.get('/', (req, res) => {
     res.send('Lista dei miei post');
 })
 
 // show:
-router.get('/:id', (res, req) => {
+router.get('/:id', (req, res) => {
     res.send('Dettaglio del post ' +req.params.id);
 })
 
 // store:
-router.post('/', (res, req) => {
+router.post('/', (req, res) => {
     res.send('Inserimento del nuovo post');
 })
 
 // update:
-router.put('/.id', (res, req) => {
+router.put('/:id', (req, res) => {
     res.send(`Modifica totale del post ${req.params.id}`);
 })
 
 // modify:
-router.patch('/.id', (res, req) => {
+router.patch('/:id', (req, res) => {
     res.send(`Modifica parziale del post ${req.params.id}`);
 })
 
 // destroy:
-router.delete('/.id', (res, req) => {
+router.delete('/:id', (req, res) => {
     res.send(`Cancellazione del post ${req.params.id}`);
 })
 
